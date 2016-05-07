@@ -169,7 +169,7 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 #							#
 #############################
 
-alias tn ='vim /Documents/Task\ Notes.html'
+alias tn='vim /Documents/Task\ Notes.html'
 alias scratch='vim /Documents/scratch.html'
 
 #############################
