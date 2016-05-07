@@ -1,0 +1,6 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='ftp://matsiene@matsie.net/'
+let g:netrw_dirhist_2='ftp://matsiene@matsie.net/public_html/'
+let g:netrw_dirhist_3='ftp://matsiene@matsie.net/public_html/water-wars/'
+let g:netrw_dirhist_4='/Users/mkenny/dotfiles'
