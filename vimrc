@@ -32,6 +32,7 @@ filetype plugin indent on    " required
 set t_Co=256
 colorscheme evolution
 syntax on
+set expandtab
 set clipboard+=unnamed
 autocmd StdinReadPre * let s:std_in=1
 autocmd Filetype html setlocal ts=2 sts=2 sw=2

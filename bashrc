@@ -179,6 +179,11 @@ alias scratch='vim /Documents/scratch.html'
 #############################
 
 alias project='cd /var/www/project'
-alias ghost='cd /var/www/ghost'
+alias ghosty='cd /var/www/ghost'
 alias static='cd /var/www/static'
 
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
