@@ -182,8 +182,10 @@ alias project='cd /var/www/project'
 alias ghosty='cd /var/www/ghost'
 alias static='cd /var/www/static'
 
+export PATH="$PATH:/usr/local/heroku/bin"
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM in a shell session as a function
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
