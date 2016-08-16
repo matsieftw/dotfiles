@@ -1,4 +1,4 @@
-set nocompatible              " be iMproved, required
+
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
@@ -12,7 +12,10 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'shemerey/vim-peepopen'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
-Plugin 'TownK/vim-autoclose'
+Plugin 'tpope/vim-rails'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'raimondi/delimitmate'
+Plugin 'tpope/vim-markdown'
 Plugin 'vim-airline/vim-airline'
 let g:airline#extensions#tabline#enabled = 1
 Plugin 'kien/ctrlp.vim'
@@ -42,3 +45,13 @@ set relativenumber
 set number
 set backspace=indent,eol,start
 set ruler
+
+if &term =~ '^screen'
+    " tmux will send xterm-style keys when its xterm-keys option is on
+    execute "set <xUp>=\e[1;*A"
+    execute "set <xDown>=\e[1;*B"
+    execute "set <xRight>=\e[1;*C"
+    execute "set <xLeft>=\e[1;*D"
+endif
+
+map <Esc>[B <Down>

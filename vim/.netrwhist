@@ -1,6 +1,11 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_cnt =9
 let g:netrw_dirhist_1='ftp://matsiene@matsie.net/'
 let g:netrw_dirhist_2='ftp://matsiene@matsie.net/public_html/'
 let g:netrw_dirhist_3='ftp://matsiene@matsie.net/public_html/water-wars/'
 let g:netrw_dirhist_4='/Users/mkenny/dotfiles'
+let g:netrw_dirhist_5='/Users/mkenny/exercism/javascript/hello-world'
+let g:netrw_dirhist_6='/Users/mkenny/Documents/masteringnode/chapters'
+let g:netrw_dirhist_7='/Users/mkenny/Downloads'
+let g:netrw_dirhist_8='/Users/mkenny/Downloads/1605-HKNola-LogoResize-KG-A-02 (1)'
+let g:netrw_dirhist_9='/Users/mkenny/.ssh'
