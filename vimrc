@@ -26,6 +26,8 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'Yggdroot/indentLine'
+Plugin 'othree/html5.vim'
+Plugin 'hail2u/vim-css3-syntax'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -35,6 +37,8 @@ filetype plugin indent on    " required
 set t_Co=256
 colorscheme evolution
 syntax on
+set expandtab
+set tabstop=2
 set clipboard+=unnamed
 autocmd StdinReadPre * let s:std_in=1
 autocmd Filetype html setlocal ts=2 sts=2 sw=2
