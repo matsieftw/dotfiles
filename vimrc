@@ -1,13 +1,5 @@
-<<<<<<< HEAD
-
-filetype off                  " required
-||||||| merged common ancestors
-set nocompatible              " be iMproved, required
-filetype off                  " required
-=======
 set nocompatible         
 filetype off            
->>>>>>> 796ec991b6508b4fa4adf8ba9de34f8df797f020
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
