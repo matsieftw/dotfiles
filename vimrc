@@ -72,70 +72,6 @@ set relativenumber
 set number
 set backspace=indent,eol,start
 set ruler
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-if &term =~ '^screen'
-    " tmux will send xterm-style keys when its xterm-keys option is on
-    execute "set <xUp>=\e[1;*A"
-    execute "set <xDown>=\e[1;*B"
-    execute "set <xRight>=\e[1;*C"
-    execute "set <xLeft>=\e[1;*D"
-endif
-
-map <Esc>[B <Down>
-||||||| merged common ancestors
-=======
-if &term =~ '^screen'
-    " tmux will send xterm-style keys when its xterm-keys option is on
-    execute "set <xUp>=\e[1;*A"
-    execute "set <xDown>=\e[1;*B"
-    execute "set <xRight>=\e[1;*C"
-    execute "set <xLeft>=\e[1;*D"
-endif
-set runtimepath^=~/.vim/bundle/ctrlp.vim
-set conceallevel=1
-let g:indentLine_color_term = 239
-let g:indentLine_char = '|'
-let g:indentLine_concealcursor = 'inc'
-let g:indentLine_conceallevel = 2
-let g:indentLine_enabled = 1
-au BufRead,BufEnter,BufNewFile * IndentLinesReset
-" air-line
-let g:airline#extensions#tabline#enabled = 1
-let g:airline_powerline_fonts = 1
-if !exists('g:airline_symbols')
-    let g:airline_symbols = {}
-endif
-" unicode symbols
-let g:airline_left_sep = '»'
-let g:airline_left_sep = '▶'
-let g:airline_right_sep = '«'
-let g:airline_right_sep = '◀'
-let g:airline_symbols.linenr = '␊'
-let g:airline_symbols.linenr = '␤'
-let g:airline_symbols.linenr = '¶'
-let g:airline_symbols.branch = '⎇'
-let g:airline_symbols.paste = 'ρ'
-let g:airline_symbols.paste = 'Þ'
-let g:airline_symbols.paste = '∥'
-let g:airline_symbols.whitespace = 'Ξ'
-let g:airline_symbols.space = "\ua0"
-let g:tmuxline_preset = {
-      \'a'    : '#S',
-      \'win'  : ['#I', '#W'],
-      \'cwin' : ['#I', '#W', '#F'],
-      \'y'    : ['%R', '%a', '%Y'],
-      \'z'    : '#H'}
-let g:tmuxline_separators = {
-    \ 'left' : '»',
-    \ 'left_alt': '▶',
-    \ 'right' : '«',
-    \ 'right_alt' : '◀',
-    \ 'space' : ' '}
->>>>>>> 796ec991b6508b4fa4adf8ba9de34f8df797f020
-||||||| merged common ancestors
-=======
 if &term =~ '^screen'
     " tmux will send xterm-style keys when its xterm-keys option is on
     execute "set <xUp>=\e[1;*A"
@@ -192,4 +128,3 @@ let g:tmuxline_separators = {
     \ 'right' : '',
     \ 'right_alt' : '◀',
     \ 'space' : ' '}
->>>>>>> 823ff4b370fba184be6ecd878751d395c301e371
