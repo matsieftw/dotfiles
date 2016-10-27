@@ -30,6 +30,7 @@ Plugin 'Yggdroot/indentLine'
 Plugin 'bling/vim-bufferline'
 Plugin 'edkolev/promptline.vim'
 Plugin 'lifepillar/vim-mucomplete'
+Plugin 'vim-airline/vim-airline-themes'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on
@@ -88,6 +89,10 @@ let g:indentLine_enabled = 1
 au BufRead,BufEnter,BufNewFile * IndentLinesReset
 " air-line
 let g:airline#extensions#tabline#enabled = 1
+let g:airline_theme='jellybeans'
+set laststatus=2
+let g:bufferline_echo = 0
+set noshowmode
 let g:airline_powerline_fonts = 1
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
@@ -107,14 +112,19 @@ let g:airline_symbols.paste = '∥'
 let g:airline_symbols.whitespace = 'Ξ'
 let g:airline_symbols.space = "\ua0"
 let g:tmuxline_preset = {
-      \'a'    : '#S',
-      \'win'  : ['#I', '#W'],
-      \'cwin' : ['#I', '#W', '#F'],
-      \'y'    : ['%R', '%a', '%Y'],
-      \'z'    : '#H'}
+      \'a'    : '#{?client_prefix,#[reverse]<Prefix>#[noreverse] ,}',
+      \'b'    : '#(whoami)',
+      \'c'    : '#h',
+      \'win'    : ['#I', '#W'],
+      \'cwin'    : ['#I', '#W', '#F'],
+      \'y'    : ['%a, %b %d'],
+      \'z'    : '%R',
+      \'options' : {
+      \'status-justify': 'left'}
+      \}
 let g:tmuxline_separators = {
-    \ 'left' : '»',
+    \ 'left' : '',
     \ 'left_alt': '▶',
-    \ 'right' : '«',
+    \ 'right' : '',
     \ 'right_alt' : '◀',
     \ 'space' : ' '}
