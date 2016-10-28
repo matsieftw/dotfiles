@@ -81,6 +81,7 @@ if &term =~ '^screen'
 endif
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 set conceallevel=1
+let g:syntastic_always_populate_loc_list = 1
 let g:indentLine_color_term = 239
 let g:indentLine_char = '|'
 let g:indentLine_concealcursor = 'inc'
