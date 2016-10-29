@@ -73,11 +73,11 @@ set number
 set backspace=indent,eol,start
 set ruler
 if &term =~ '^screen'
-    " tmux will send xterm-style keys when its xterm-keys option is on
-    execute "set <xUp>=\e[1;*A"
-    execute "set <xDown>=\e[1;*B"
-    execute "set <xRight>=\e[1;*C"
-    execute "set <xLeft>=\e[1;*D"
+  " tmux will send xterm-style keys when its xterm-keys option is on
+  execute "set <xUp>=\e[1;*A"
+  execute "set <xDown>=\e[1;*B"
+  execute "set <xRight>=\e[1;*C"
+  execute "set <xLeft>=\e[1;*D"
 endif
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 set conceallevel=1
@@ -96,7 +96,7 @@ let g:bufferline_echo = 0
 set noshowmode
 let g:airline_powerline_fonts = 1
 if !exists('g:airline_symbols')
-    let g:airline_symbols = {}
+  let g:airline_symbols = {}
 endif
 " unicode symbols
 let g:airline_left_sep = '»'
@@ -124,8 +124,8 @@ let g:tmuxline_preset = {
       \'status-justify': 'left'}
       \}
 let g:tmuxline_separators = {
-    \ 'left' : '',
-    \ 'left_alt': '▶',
-    \ 'right' : '',
-    \ 'right_alt' : '◀',
-    \ 'space' : ' '}
+      \ 'left' : '',
+      \ 'left_alt': '▶',
+      \ 'right' : '',
+      \ 'right_alt' : '◀',
+      \ 'space' : ' '}
