@@ -1,11 +1,2 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =9
-let g:netrw_dirhist_1='/Users/mkenny/.vim'
-let g:netrw_dirhist_2='/Users/mkenny/.vim/bundle'
-let g:netrw_dirhist_3='/Users/mkenny/dotfiles/vim/bundle'
-let g:netrw_dirhist_4='/Users/mkenny/Projects/momentjs.com'
-let g:netrw_dirhist_5='/Users/mkenny/Projects/momentjs.com/guides'
-let g:netrw_dirhist_6='/Users/mkenny/Projects/momentjs.com/guides/moment'
-let g:netrw_dirhist_7='/Users/mkenny/Projects/momentjs.com/guides/moment/01-parsing'
-let g:netrw_dirhist_8='/Users/mkenny/Projects/github-battle/app/containers'
-let g:netrw_dirhist_9='/Users/mkenny/.vim'
+let g:netrw_dirhist_cnt =0
