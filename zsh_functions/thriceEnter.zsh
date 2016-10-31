@@ -1,21 +1,20 @@
 #!/bin/zsh
 declare empty_counter=0
 
-clear_hook() {
-  if [ ${#${(z)BUFFER}} -eq 0 ]; then
-    let empty_counter=$empty_counter+1
-    if [ $empty_counter -eq 2 ]; then
-      let empty_counter=0
-      /usr/bin/clear
+precmd_hook() {
+    if [ $empty_count -gt 1 ]; then
+        /usr/bin/clear
+        let empty_count=0
     fi
 
-  else
-    let empty_counter=0
-  fi
-
-  zle accept-line
+    let empty_count=$empty_count+1
 }
 
-zle -N clear_hook
+preexec_hook() {
+    let empty_count=0
+}
 
-bindkey '^M' clear_hook
+autoload -U add-zsh-hook
+
+add-zsh-hook precmd precmd_hook
+add-zsh-hook preexec preexec_hook
