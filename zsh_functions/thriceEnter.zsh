@@ -2,7 +2,7 @@
 declare empty_counter=0
 
 precmd_hook() {
-    if [ $empty_count -gt 1 ]; then
+    if [[ $empty_count -gt 1 ]]; then
         /usr/bin/clear
         let empty_count=0
     fi

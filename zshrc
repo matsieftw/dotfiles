@@ -49,3 +49,6 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
  alias zshconfig="vim ~/.zshrc"
  alias ohmyzsh="vim ~/.oh-my-zsh"
+
+ # enter key script
+source ~/.zsh_functions/thriceEnter.zsh
