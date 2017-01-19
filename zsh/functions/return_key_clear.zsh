@@ -1,4 +1,3 @@
-#!/bin/zsh
 declare empty_counter=0
 
 precmd_hook() {
