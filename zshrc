@@ -1,4 +1,4 @@
-export ZSH=/Users/mkenny/.zsh/.oh-my-zsh
+export ZSH=$HOME/.zsh/.oh-my-zsh
 
 export TERM="xterm-256color"
 

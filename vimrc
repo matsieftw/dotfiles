@@ -25,7 +25,6 @@ filetype plugin indent on
 set t_Co=256
 colorscheme evolution
 syntax on
-set clipboard+=unnamed
 set noeol
 set nohlsearch
 set showmatch
@@ -61,12 +60,23 @@ set number
 set backspace=indent,eol,start
 set ruler
 if &term =~ '^screen'
-  " tmux will send xterm-style keys when its xterm-keys option is on
+
+" tmux will send xterm-style keys when its xterm-keys option is on
   execute "set <xUp>=\e[1;*A"
   execute "set <xDown>=\e[1;*B"
   execute "set <xRight>=\e[1;*C"
   execute "set <xLeft>=\e[1;*D"
 endif
+
+" copy and paste to clipboard
+if has('clipboard')
+        if has('unnamedplus')  " When possible use + register for copy-paste
+            set clipboard=unnamed,unnamedplus
+        else         " On mac and Windows, use * register for copy-paste
+            set clipboard=unnamed
+        endif
+endif
+
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 set conceallevel=1
 let g:syntastic_always_populate_loc_list = 1
