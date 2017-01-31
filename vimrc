@@ -1,5 +1,6 @@
-set nocompatible         
-filetype off            
+" vundle set up
+set nocompatible
+filetype off
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -21,6 +22,7 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'sheerun/vim-polyglot'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
+
 filetype plugin indent on
 set t_Co=256
 colorscheme evolution
@@ -32,18 +34,7 @@ set ic
 set ai
 set viminfo='20
 set splitright
-syntax on
-filetype on
-filetype indent on
-hi Comment ctermfg=blue
-map <C-J> <C-W>j <C-W>_
-map <C-K> <C-W>k <C-W>_
-com W :w
-com Q :q
-com WQ :wq
-com Wq :wq
-set tabstop=2 softtabstop=0 expandtab shiftwidth=4 smarttab
-autocmd StdinReadPre * let s:std_in=1
+"set tabstop=2 softtabstop=0 expandtab shiftwidth=4 smarttab
 au Filetype * set ts=2 sts=2 sw=2
 au FileType python set ts=4 sts=4 sw=4 nosmartindent
 au FileType ruby set ts=2 sts=2 sw=2 nosmartindent
@@ -54,12 +45,22 @@ au FileType xhtml set ts=2 sts=2 sw=2
 au FileType css set ts=2 sts=2 sw=2
 au FileType sh set ts=2 sts=2 sw=2 nosmartindent
 au FileType xml set ts=2 sts=2 sw=2
+hi Comment ctermfg=blue
+map <C-J> <C-W>j <C-W>_
+map <C-K> <C-W>k <C-W>_
+autocmd StdinReadPre * let s:std_in=1
+command WQ wq
+command Wq wq
+command W w
+command Q q
 let macvim_skip_colorscheme = 1
 set relativenumber
 set number
 set backspace=indent,eol,start
 set ruler
 if &term =~ '^screen'
+
+
 
 " tmux will send xterm-style keys when its xterm-keys option is on
   execute "set <xUp>=\e[1;*A"
@@ -88,7 +89,8 @@ let g:indentLine_enabled = 1
 au BufRead,BufEnter,BufNewFile * IndentLinesReset
 " air-line
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme='jellybeans'
+let g:airline_theme='vice'
+let g:airline#extensions#tmuxline#enabled = 1
 set laststatus=2
 let g:bufferline_echo = 0
 set noshowmode
@@ -121,9 +123,3 @@ let g:tmuxline_preset = {
       \'options' : {
       \'status-justify': 'left'}
       \}
-let g:tmuxline_separators = {
-      \ 'left' : '',
-      \ 'left_alt': '▶',
-      \ 'right' : '',
-      \ 'right_alt' : '◀',
-      \ 'space' : ' '}
