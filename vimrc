@@ -6,12 +6,11 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-rails'
+Plugin 'tpope/vim-speeddating'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'raimondi/delimitmate'
-Plugin 'vim-airline/vim-airline'
 Plugin 'scrooloose/syntastic'
 Plugin 'edkolev/tmuxline.vim'
 Plugin 'ctrlpvim/ctrlp.vim'
@@ -19,7 +18,9 @@ Plugin 'ap/vim-css-color'
 Plugin 'Yggdroot/indentLine'
 Plugin 'bling/vim-bufferline'
 Plugin 'vim-airline/vim-airline-themes'
+Plugin 'vim-airline/vim-airline'
 Plugin 'sheerun/vim-polyglot'
+Plugin 'jceb/vim-orgmode'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 
