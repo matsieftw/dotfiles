@@ -1,49 +1,55 @@
-export ZSH=$HOME/.zsh/.oh-my-zsh
+source $HOME/.zplug/init.zsh
 
-export TERM="xterm-256color"
+zplug "lib/function", from:oh-my-zsh
+zplug "lib/completion", from:oh-my-zsh
+zplug "lib/directories", from:oh-my-zsh
+zplug "lib/history", from:oh-my-zsh
+zplug "lib/key-bindings", from:oh-my-zsh
+zplug "lib/termsupport", from:oh-my-zsh
+zplug "plugins/git", from:oh-my-zsh
+zplug "plugins/common-aliases", from:oh-my-zsh
+zplug "plugins/git-extras", from:oh-my-zsh
+zplug "plugins/osx", from:oh-my-zsh
+zplug "plugins/vi-mode", from:oh-my-zsh
+zplug "$ZSH", from:local, use:mattie.zsh-theme, as:theme
 
-ZSH_THEME="mattie"
+# ask to install new plugins
+if ! zplug check --verbose; then
+    printf "Install? [y/N]: "
+    if read -q; then
+        echo; zplug install
+    fi
+fi
+
+zplug load
 
 HYPHEN_INSENSITIVE="true"
 
 DISABLE_AUTO_TITLE="true"
 
-ENABLE_CORRECTION="true"
+export ZSH=$HOME/.zsh
 
-COMPLETION_WAITING_DOTS="true"
-
-plugins=(git,rails,ruby,common-aliases,git-extras,osx,vi-mode)
-
-source $ZSH/oh-my-zsh.sh
-
-# export MANPATH="/usr/local/man:$MANPATH"
+export TERM="xterm-256color"
 
 export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-if [[ -n $SSH_CONNECTION ]]; then
-   export EDITOR='vim'
- else
-   export EDITOR='mvim'
-fi
 
 # ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
 
-# Source Aliases
-source $HOME/.zsh/.aliases
+# source theme
+#source $ZSH/mattie.zsh-theme
 
-# Source Scripts
-for file in $HOME/.zsh/functions/*; do
-    source "$file"
+# source local settings
+if [ -f $HOME/.zshrc.local ]; then
+  source $HOME/.zshrc.local
+fi
+
+# source aliases
+if [ -f $ZSH/.aliases ]; then
+  source $ZSH/.aliases
+fi
+
+# source scripts
+for file in $ZSH/functions/*; do
+  source "$file"
 done
-
-export PYENV_ROOT="$HOME/.pyenv"
-
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-
-if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
-
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
