@@ -27,18 +27,6 @@ HYPHEN_INSENSITIVE="true"
 
 DISABLE_AUTO_TITLE="true"
 
-export ZSH=$HOME/.zsh
-
-export TERM="xterm-256color"
-
-export LANG=en_US.UTF-8
-
-# ssh
-# export SSH_KEY_PATH="~/.ssh/rsa_id"
-
-# source theme
-#source $ZSH/mattie.zsh-theme
-
 # source local settings
 if [ -f $HOME/.zshrc.local ]; then
   source $HOME/.zshrc.local
