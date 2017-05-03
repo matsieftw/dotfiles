@@ -9,6 +9,7 @@
 
 dir=~/dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
+
 files="vimrc tmux.conf zshenv" # list of files/folders to symlink in homedir
 
 ##########

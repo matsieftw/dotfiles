@@ -11,7 +11,9 @@ zplug "plugins/common-aliases", from:oh-my-zsh
 zplug "plugins/git-extras", from:oh-my-zsh
 zplug "plugins/osx", from:oh-my-zsh
 zplug "plugins/vi-mode", from:oh-my-zsh
+
 zplug "$ZDOTDIR", from:local, use:mattie.zsh-theme, as:theme
+
 
 # ask to install new plugins
 if ! zplug check --verbose; then
@@ -23,10 +25,9 @@ fi
 
 zplug load
 
+# set zsh options
 HYPHEN_INSENSITIVE="true"
-
 DISABLE_AUTO_TITLE="true"
-
 setopt AUTO_CD
 
 # source local settings
@@ -35,11 +36,13 @@ if [ -f $HOME/.zshrc.local ]; then
 fi
 
 # source aliases
+
 if [ -f $ZDOTDIR/.aliases ]; then
   source $ZDOTDIR/.aliases
 fi
 
 # source scripts
 for file in $ZDOTDIR/functions/*; do
+
   source "$file"
 done
