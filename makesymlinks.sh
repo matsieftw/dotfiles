@@ -27,7 +27,7 @@ echo "done"
 for file in $files; do
     echo "Moving any existing dotfiles from ~ to $olddir"
     mv ~/.$file ~/dotfiles_old/
-		mv ~/.zsh ~/dotfiles_old/zsh/
+    mv ~/.zsh ~/dotfiles_old/zsh/
     echo "Creating symlink to $file in home directory."
     ln -s $dir/$file ~/.$file
 done
@@ -44,9 +44,9 @@ echo "done"
 
 # symlink zsh files
 for file in *; do
-	echo "Creating symlink to $file in zsh directory."
-	ln -s $dir/zsh/$file ~/.zsh/.$file
-	echo "done"
+  echo "Creating symlink to $file in zsh directory."
+  ln -s $dir/zsh/$file ~/.zsh/.$file
+  echo "done"
 done
 
 # create symlink to functions directory
