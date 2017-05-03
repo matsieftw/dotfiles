@@ -13,6 +13,7 @@ zplug "plugins/osx", from:oh-my-zsh
 zplug "plugins/vi-mode", from:oh-my-zsh
 zplug "$ZDOTDIR", from:local, use:.mattie.zsh-theme, as:theme
 
+
 # ask to install new plugins
 if ! zplug check --verbose; then
     printf "Install? [y/N]: "
