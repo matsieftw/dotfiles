@@ -1,0 +1,13 @@
+# Create subdir, cd into it
+cmdir() {
+  mkdir "$1" && cd "$1"
+}
+
+alias ls="ls -lacFG"
+
+# git aliases
+alias gs="git status"
+alias gco="git checkout"
+alias gc="git commit -m"
+alias ga="git add"
+alias gr="git rebase"

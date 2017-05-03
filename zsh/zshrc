@@ -11,7 +11,7 @@ zplug "plugins/common-aliases", from:oh-my-zsh
 zplug "plugins/git-extras", from:oh-my-zsh
 zplug "plugins/osx", from:oh-my-zsh
 zplug "plugins/vi-mode", from:oh-my-zsh
-zplug "$ZSH", from:local, use:mattie.zsh-theme, as:theme
+zplug "$ZDOTDIR", from:local, use:mattie.zsh-theme, as:theme
 
 # ask to install new plugins
 if ! zplug check --verbose; then
@@ -33,11 +33,11 @@ if [ -f $HOME/.zshrc.local ]; then
 fi
 
 # source aliases
-if [ -f $ZSH/.aliases ]; then
+if [ -f $ZDOTDIR/.aliases ]; then
   source $ZSH/.aliases
 fi
 
 # source scripts
-for file in $ZSH/functions/*; do
+for file in $ZDOTDIR/functions/*; do
   source "$file"
 done
