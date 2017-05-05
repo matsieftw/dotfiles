@@ -20,7 +20,7 @@ Plugin 'bling/vim-bufferline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'vim-airline/vim-airline'
 Plugin 'sheerun/vim-polyglot'
-Plugin 'jceb/vim-orgmode'
+Plugin 'bronson/vim-trailing-whitespace'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 
