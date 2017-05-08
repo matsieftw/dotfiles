@@ -12,3 +12,8 @@ if [[ -n $SSH_CONNECTION ]]; then
 fi
 
 source $ZDOTDIR/.zshrc
+
+# source local settings
+if [ -f $HOME/.zshrc.local ]; then
+  source $HOME/.zshrc.local
+fi
