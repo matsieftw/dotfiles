@@ -28,6 +28,11 @@ HYPHEN_INSENSITIVE="true"
 DISABLE_AUTO_TITLE="true"
 setopt AUTO_CD
 
+# source local settings
+if [ -f ~/.zshrc.local ]; then
+  source ~/.zshrc.local
+fi
+
 # source aliases
 if [ -f $ZDOTDIR/.aliases ]; then
   source $ZDOTDIR/.aliases

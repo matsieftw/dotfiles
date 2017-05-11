@@ -10,10 +10,3 @@ if [[ -n $SSH_CONNECTION ]]; then
  else
    export EDITOR='mvim'
 fi
-
-source $ZDOTDIR/.zshrc
-
-# source local settings
-if [ -f $HOME/.zshrc.local ]; then
-  source $HOME/.zshrc.local
-fi
