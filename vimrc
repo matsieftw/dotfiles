@@ -24,10 +24,13 @@ Plugin 'bronson/vim-trailing-whitespace'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 
-filetype plugin indent on
+" Colors
 set t_Co=256
 colorscheme evolution
-syntax on
+hi Comment ctermfg=blue
+let macvim_skip_colorscheme = 1
+
+" General Editor Settings
 set noeol
 set nohlsearch
 set showmatch
@@ -35,7 +38,15 @@ set ic
 set ai
 set viminfo='20
 set splitright
-"set tabstop=2 softtabstop=0 expandtab shiftwidth=4 smarttab
+set number
+set relativenumber
+set backspace=indent,eol,start
+set ruler
+
+" Syntax and tabbing
+syntax on
+set expandtab
+filetype plugin indent on
 au Filetype * set ts=2 sts=2 sw=2
 au FileType python set ts=4 sts=4 sw=4 nosmartindent
 au FileType ruby set ts=2 sts=2 sw=2 nosmartindent
@@ -46,7 +57,8 @@ au FileType xhtml set ts=2 sts=2 sw=2
 au FileType css set ts=2 sts=2 sw=2
 au FileType sh set ts=2 sts=2 sw=2 nosmartindent
 au FileType xml set ts=2 sts=2 sw=2
-hi Comment ctermfg=blue
+
+" Keyboard Mapping
 map <C-J> <C-W>j <C-W>_
 map <C-K> <C-W>k <C-W>_
 autocmd StdinReadPre * let s:std_in=1
@@ -54,11 +66,8 @@ command WQ wq
 command Wq wq
 command W w
 command Q q
-let macvim_skip_colorscheme = 1
-set relativenumber
-set number
-set backspace=indent,eol,start
-set ruler
+
+
 if &term =~ '^screen'
 " tmux will send xterm-style keys when its xterm-keys option is on
   execute "set <xUp>=\e[1;*A"
@@ -76,26 +85,35 @@ if has('clipboard')
         endif
 endif
 
-set runtimepath^=~/.vim/bundle/ctrlp.vim
-set conceallevel=1
+" Plugin Specific Settings
+
+" syntastic
 let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_javascript_checkers=['eslint']
+
+" indentline
+au BufRead,BufEnter,BufNewFile * IndentLinesReset
 let g:indentLine_color_term = 239
 let g:indentLine_char = '|'
 let g:indentLine_concealcursor = 'inc'
 let g:indentLine_conceallevel = 1
 let g:indentLine_enabled = 1
-au BufRead,BufEnter,BufNewFile * IndentLinesReset
+set conceallevel=1
+
 " air-line
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme='vice'
 let g:airline#extensions#tmuxline#enabled = 1
-set laststatus=2
+let g:airline_powerline_fonts = 1
 let g:bufferline_echo = 0
 set noshowmode
-let g:airline_powerline_fonts = 1
+set laststatus=2
+
 if !exists('g:airline_symbols')
   let g:airline_symbols = {}
 endif
+
+" tmuxline
 let g:tmuxline_preset = {
       \'a'    : '#{?client_prefix,#[reverse]<Prefix>#[noreverse] ,}',
       \'b'    : '#(whoami)',
