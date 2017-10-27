@@ -3,7 +3,8 @@ cmdir() {
   mkdir "$1" && cd "$1"
 }
 
-alias ls="ls -lacFG"
+alias ls="exa -laFG --git"
+alias lint='(files=$(git_file_changes); if [[ -n $files ]]; then eslint ${=files}; fi)'
 
 # git aliases
 alias gs="git status"
