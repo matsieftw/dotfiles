@@ -33,12 +33,15 @@ if [ -f ~/.zshrc.local ]; then
   source ~/.zshrc.local
 fi
 
+# source scripts
+for file in $ZDOTDIR/functions/*(.); do
+  source "$file"
+done
+
 # source aliases
 if [ -f $ZDOTDIR/.aliases ]; then
   source $ZDOTDIR/.aliases
 fi
 
-# source scripts
-for file in $ZDOTDIR/functions/*; do
-  source "$file"
-done
+# source tmuxinator
+source ~/.bin/tmuxinator.zsh
