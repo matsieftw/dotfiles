@@ -83,6 +83,12 @@ let g:indentLine_conceallevel = 1
 let g:indentLine_enabled = 1
 set conceallevel=1
 
+" ale
+let g:ale_sign_error = '💩'
+let g:ale_sign_warning = '💩'
+highlight clear ALEErrorSign
+highlight clear ALEWarningSign
+
 " air-line
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':t:r'
