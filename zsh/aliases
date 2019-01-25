@@ -3,8 +3,10 @@ cmdir() {
   mkdir "$1" && cd "$1"
 }
 
-alias ls="exa -laFG --git"
+alias ls="exa -laxFG --extended --git"
 alias lint='(files=$(git_file_changes); if [[ -n $files ]]; then eslint ${=files}; fi)'
+alias vim='mvim -v'
+alias build="npm run build"
 
 # git aliases
 alias gs="git status"
