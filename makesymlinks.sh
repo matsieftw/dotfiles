@@ -52,3 +52,8 @@ done
 echo "Creating symlink to functions directory."
 ln -s $dir/zsh/functions ~/.zsh/
 echo "done"
+
+# change shell or reload shell if already zsh
+echo "Checking shell."
+current_shell=
+

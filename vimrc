@@ -19,7 +19,6 @@ call plug#end()
 
 " Colors
 set t_Co=256
-colorscheme evolution
 hi Comment ctermfg=blue
 let macvim_skip_colorscheme = 1
 
