@@ -1,15 +1,10 @@
 source $HOME/.zplug/init.zsh
 
-zplug "lib/function", from:oh-my-zsh
 zplug "lib/completion", from:oh-my-zsh
 zplug "lib/directories", from:oh-my-zsh
 zplug "lib/history", from:oh-my-zsh
 zplug "lib/key-bindings", from:oh-my-zsh
 zplug "lib/termsupport", from:oh-my-zsh
-zplug "plugins/git", from:oh-my-zsh
-zplug "plugins/common-aliases", from:oh-my-zsh
-zplug "plugins/git-extras", from:oh-my-zsh
-zplug "plugins/osx", from:oh-my-zsh
 zplug "plugins/vi-mode", from:oh-my-zsh
 zplug denysdovhan/spaceship-prompt, use:spaceship.zsh, from:github, as:theme
 
@@ -23,18 +18,25 @@ fi
 
 zplug load
 
+# add nvm
+source $NVM_DIR/nvm.sh
+
+# Set up pyenv shims in PATH
+export PATH="$PYENVDIR/bin:$PATH"
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
+
 # set zsh options
 HYPHEN_INSENSITIVE="true"
 DISABLE_AUTO_TITLE="true"
 setopt AUTO_CD
 
 # set theme options
-SPACESHIP_NODE_SHOW="false"
-
-# source local settings
-if [ -f ~/.zshrc.local ]; then
-  source ~/.zshrc.local
-fi
+SPACESHIP_VI_MODE_SHOW="false"
+SPACESHIP_TIME_SHOW="true"
+SPACESHIP_GIT_STATUS_PREFIX=""
+SPACESHIP_GIT_STATUS_SUFFIX=""
 
 # source scripts
 for file in $ZDOTDIR/functions/*(.); do
@@ -46,8 +48,7 @@ if [ -f $ZDOTDIR/.aliases ]; then
   source $ZDOTDIR/.aliases
 fi
 
-# source tmuxinator
-if [ -f ~/.bin/tmuxinator.zsh ]; then
-  source ~/.bin/tmuxinator.zsh
+# source local settings
+if [ -f $HOME/.zshrc.local ]; then
+  source $HOME/.zshrc.local
 fi
-

@@ -1,4 +1,6 @@
 export ZDOTDIR=$HOME/.zsh
+export PYENVDIR=$HOME/.pyenv
+export NVM_DIR=$HOME/.nvm
 
 export TERM="xterm-256color"
 
@@ -10,3 +12,5 @@ if [[ -n $SSH_CONNECTION ]]; then
  else
    export EDITOR='vim'
 fi
+
+source ~/.zsh/.zshrc
