@@ -93,7 +93,7 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':t:r'
 let g:airline#extensions#tabline#buffer_nr_show = 1
 let g:airline#extensions#ale#enabled = 1
-let g:airline_theme='vice'
+let g:airline_theme='violet'
 let g:airline#extensions#tmuxline#enabled = 1
 let g:airline_powerline_fonts = 1
 set noshowmode
